@@ -1,0 +1,62 @@
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    {% include header.html %}
+    <div class="container">
+    {% assign counter = 0 %}
+    {% assign reasons = site.english | where:"category","reason" %}
+    {% assign windowsreasons = site.english | where:"category","sticktowindows" %}
+    {% for reason in reasons %}
+        {% assign counter = counter | plus: 1 %}
+        <div class="col-sm-4 col-md-3 col-lg-2 col-xl-2">
+            <img src="/images/{{ reason.image }}" class="center-block">
+            <h3 class="text-center"><a href="{{ reason.url }}">{{ reason.title }}</a></h4>
+        </div>
+        {% comment %}
+        Credit to Dygestor from http://stackoverflow.com/a/29984527 for clearfixes idea
+        {% endcomment %}
+        {% assign mod_sm = counter | modulo: 3 %}
+        {% assign mod_md = counter | modulo: 4 %}
+        {% assign mod_lg_xl = counter | modulo: 6 %}
+        {% if mod_sm == 0 %}
+        <div class="clearfix visible-sm-block"></div>
+        {% endif %}
+        {% if mod_md == 0 %}
+        <div class="clearfix visible-md-block"></div>
+        {% endif %}
+        {% if mod_lg_xl == 0 %}
+        <div class="clearfix visible-lg-block"></div>
+        <div class="clearfix visible-xl-block"></div>
+        {% endif %}
+    {% endfor %}
+    <div class="clearfix"></div>
+    <h2>The few cases where you should stick to Windows (for now)</h2>
+    {% for reason in windowsreasons %}
+    {% assign counter = counter | plus: 1 %}
+    <div class="col-sm-4 col-md-3 col-lg-2 col-xl-2">
+        <img src="/images/{{ reason.image }}" class="center-block">
+        <h3 class="text-center"><a href="{{ reason.url }}">{{ reason.title }}</a></h4>
+    </div>
+    {% comment %}
+    Credit to Dygestor from http://stackoverflow.com/a/29984527 for clearfixes idea
+    {% endcomment %}
+    {% assign mod_sm = counter | modulo: 3 %}
+    {% assign mod_md = counter | modulo: 4 %}
+    {% assign mod_lg_xl = counter | modulo: 6 %}
+    {% if mod_sm == 0 %}
+    <div class="clearfix visible-sm-block"></div>
+    {% endif %}
+    {% if mod_md == 0 %}
+    <div class="clearfix visible-md-block"></div>
+    {% endif %}
+    {% if mod_lg_xl == 0 %}
+    <div class="clearfix visible-lg-block"></div>
+    <div class="clearfix visible-xl-block"></div>
+    {% endif %}
+    {% endfor %}
+    {% include footer.html %}
+    </div>
+</body>
