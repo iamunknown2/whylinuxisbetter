@@ -1,4 +1,5 @@
 <head>
+    <title>Why Linux is Better</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -12,8 +13,8 @@
     {% for reason in reasons %}
         {% assign counter = counter | plus: 1 %}
         <div class="col-sm-4 col-md-3 col-lg-2 col-xl-2">
-            <img src="/images/{{ reason.image }}" class="center-block">
-            <h3 class="text-center"><a href="{{ reason.url }}">{{ reason.title }}</a></h4>
+            <img src="{{ site.baseurl }}/images/{{ reason.image }}" class="center-block">
+            <h3 class="text-center"><a href="{{ site.baseurl }}{{ reason.url }}">{{ reason.title }}</a></h4>
         </div>
         {% comment %}
         Credit to Dygestor from http://stackoverflow.com/a/29984527 for clearfixes idea
@@ -37,8 +38,8 @@
     {% for reason in windowsreasons %}
     {% assign counter = counter | plus: 1 %}
     <div class="col-sm-4 col-md-3 col-lg-2 col-xl-2">
-        <img src="/images/{{ reason.image }}" class="center-block">
-        <h3 class="text-center"><a href="{{ reason.url }}">{{ reason.title }}</a></h4>
+        <img src="{{ site.baseurl }}/images/{{ reason.image }}" class="center-block">
+        <h3 class="text-center"><a href="{{ site.baseurl }}{{ reason.url }}">{{ reason.title }}</a></h4>
     </div>
     {% comment %}
     Credit to Dygestor from http://stackoverflow.com/a/29984527 for clearfixes idea
