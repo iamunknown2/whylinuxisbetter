@@ -3,6 +3,7 @@ layout: post
 title:  "Forget about viruses."
 image: "viruses_thumb_smaller.png"
 category: "reason"
+rank: 1
 ---
 If your computer shuts itself down without asking you, if strange windows with text you don't understand and all kinds of advertisements appear when you don't ask for them, if emails get sent to all your contacts without your knowing it, then your computer probably has a virus. The main reason for this is because it runs Windows.
 
@@ -14,4 +15,4 @@ Linux hardly has any viruses. And that's not like "Oh well, not very often, you 
 * Linux uses smart authorization management. In Windows you (and any program you install) usually have the right to do pretty much anything to the system. If you feel like punishing your PC because it just let your precious work disappear, you can go inside the system folder and delete whatever you want: Windows won't complain. Of course, the next time you reboot, trouble begins. But imagine that if you can delete this system stuff, other programs can, too, or just mess it up. Linux doesn't allow that. Every time you request to do something that has to do with the system, an administrator password is required (and if you're not an administrator on this system, you simply can't do it). Viruses can't just go around and delete or modify what they want in the system; they don't have the authorization for that.
 * More eyes make fewer security flaws. Linux is Open source software, which means that any programmer in the world can have a look at the code (the "recipe" of any program), and help out, or just tell other developers "Hey, what if blah blah, isn't this a security flaw?".
 
-![Virus](/images/viruses_thumb_smaller.png)
+![Virus]({{ site.baseurl }}/images/viruses_thumb_smaller.png)

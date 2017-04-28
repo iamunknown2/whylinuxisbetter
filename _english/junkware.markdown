@@ -3,6 +3,7 @@ layout: post
 title:  "No more junkware."
 image: "junkware_thumb_smaller.png"
 category: "reason"
+rank: 5
 ---
 If you've ever purchased a new computer running Windows, you must know that it can be a very frustrating experience.
 

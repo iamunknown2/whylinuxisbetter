@@ -3,6 +3,7 @@ layout: post
 title:  "Freedom!"
 image: "freedom_thumb_smaller.png"
 category: "reason"
+rank: 6
 ---
 Linux and "Open Source" software are "free". This means their license is a "free license", and the most common is the GPL (General Public License). This license states that anyone is allowed to copy the software, see the source code (the "recipe"), modify it, and redistribute it as long as it remains licensed with the GPL.
 

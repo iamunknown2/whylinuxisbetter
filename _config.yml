@@ -38,3 +38,6 @@ collections:
   english:
     output: true
     permalink: /en/:title
+  chinese:
+    output: true
+    permalink: /cn/:title

@@ -3,6 +3,7 @@ layout: post
 title:  "Don't pay $100 for your operating system."
 image: "dollars_thumb_smaller.png"
 category: "reason"
+rank: 4
 ---
 ## (And don't pirate it illegally)
 

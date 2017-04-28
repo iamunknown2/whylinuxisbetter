@@ -8,8 +8,8 @@
     {% include header.html %}
     <div class="container">
     {% assign counter = 0 %}
-    {% assign reasons = site.english | where:"category","reason" | sort:"rank" %}
-    {% assign windowsreasons = site.english | where:"category","sticktowindows" | sort:"rank" %}
+    {% assign reasons = site.chinese | where:"category","reason" | sort:"rank" %}
+    {% assign windowsreasons = site.chinese | where:"category","sticktowindows" | sort:"rank" %}
     {% for reason in reasons %}
         {% assign counter = counter | plus: 1 %}
         <div class="col-sm-4 col-md-3 col-lg-2 col-xl-2">
@@ -34,7 +34,7 @@
         {% endif %}
     {% endfor %}
     <div class="clearfix"></div>
-    <h2>The few cases where you should stick to Windows (for now)</h2>
+    <h2>（目前为止）你只能继续使用微软Windows操作系统的几种情况</h2>
     {% for reason in windowsreasons %}
     {% assign counter = counter | plus: 1 %}
     <div class="col-sm-4 col-md-3 col-lg-2 col-xl-2">

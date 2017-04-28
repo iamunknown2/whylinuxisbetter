@@ -3,6 +3,7 @@ layout: post
 title:  "Forget about drivers."
 image: "drivers_thumb_smaller.png"
 category: "reason"
+rank: 8
 ---
 New pieces of hardware, even the simplest kind, usually come with a CD. On the CD, a very small piece of software called a "driver". If you read the instructions manual, you'll know that the hardware won't work on a Windows computer until you install the driver. If you're like most people and do not read the manual, then you'll probably figure it out yourself when you see your new high-tech gizmo doesn't work out of the box.
 
