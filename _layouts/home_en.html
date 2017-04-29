@@ -12,7 +12,7 @@
     {% assign windowsreasons = site.english | where:"category","sticktowindows" | sort:"rank" %}
     {% for reason in reasons %}
         {% assign counter = counter | plus: 1 %}
-        <div class="col-sm-4 col-md-3 col-lg-2 col-xl-2">
+        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 col-xl-2">
             <img src="{{ site.baseurl }}/images/{{ reason.image }}" class="center-block">
             <h3 class="text-center"><a href="{{ site.baseurl }}{{ reason.url }}">{{ reason.title }}</a></h4>
         </div>
@@ -22,6 +22,7 @@
         {% assign mod_sm = counter | modulo: 3 %}
         {% assign mod_md = counter | modulo: 4 %}
         {% assign mod_lg_xl = counter | modulo: 6 %}
+        <div class="clearfix visible-xs-block"></div>
         {% if mod_sm == 0 %}
         <div class="clearfix visible-sm-block"></div>
         {% endif %}
@@ -37,7 +38,7 @@
     <h2>The few cases where you should stick to Windows (for now)</h2>
     {% for reason in windowsreasons %}
     {% assign counter = counter | plus: 1 %}
-    <div class="col-sm-4 col-md-3 col-lg-2 col-xl-2">
+    <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 col-xl-2">
         <img src="{{ site.baseurl }}/images/{{ reason.image }}" class="center-block">
         <h3 class="text-center"><a href="{{ site.baseurl }}{{ reason.url }}">{{ reason.title }}</a></h4>
     </div>
@@ -47,6 +48,7 @@
     {% assign mod_sm = counter | modulo: 3 %}
     {% assign mod_md = counter | modulo: 4 %}
     {% assign mod_lg_xl = counter | modulo: 6 %}
+    <div class="clearfix visible-xs-block"></div>
     {% if mod_sm == 0 %}
     <div class="clearfix visible-sm-block"></div>
     {% endif %}
