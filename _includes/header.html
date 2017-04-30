@@ -6,21 +6,33 @@
         <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    {% assign reversed_url_array = page.url | split:"/" | reverse %}
-                    {% if reversed_url_array[0] == "" %}
-                        {% assign abbr_from_url = reversed_url_array[1] %}
+                    {% if page.layout != "post" %}
+                        {% assign reversed_url_array = page.url | split:"/" | reverse %}
+                        {% if reversed_url_array[0] == "" %}
+                            {% assign abbr_from_url = reversed_url_array[1] %}
+                        {% endif %}
+                        {% if reversed_url_array[0] != "" %}
+                            {% assign abbr_from_url = reversed_url_array[0] %}
+                        {% endif %}
+                        {% assign collection_of_dropdown = site.collections | where:"abbr",abbr_from_url %}
+                        {{ collection_of_dropdown[0].dropdown_name }}
                     {% endif %}
-                    {% if reversed_url_array[0] != "" %}
-                        {% assign abbr_from_url = reversed_url_array[0] %}
+                    {% if page.layout == "post" %}
+                        {% assign collection_of_dropdown = site.collections | where:"label",page.collection %}
+                        {{ collection_of_dropdown[0].dropdown_name }}
                     {% endif %}
-                    {% assign collection_from_url_abbr = site.collections | where:"abbr",abbr_from_url %}
-                    {{ collection_from_url_abbr[0].dropdown_name }}
                     <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
                     {% for collection in site.collections %}
-                    {% unless collection.label == "posts" %}{% unless collection.label == collection_from_url_abbr[0].label %}
-                    <li><a href="{{ site.baseurl }}/{{ collection.abbr }}/">{{ collection.dropdown_name }}</a></li>
+                    {% unless collection.label == "posts" %}{% unless collection.label == collection_of_dropdown[0].label %}
+                    {% if page.layout != "post" %}
+                        {% assign different_lang_url = site.baseurl | append:"/" | append:collection.abbr %}
+                    {% endif %}
+                    {% if page.layout == "post" %}
+                        {% assign different_lang_url = site.baseurl | append:"/" | append:collection.abbr | append:"/" | append:page.slug %}
+                    {% endif %}
+                    <li><a href="{{ different_lang_url }}/">{{ collection.dropdown_name }}</a></li>
                     {% endunless %}{% endunless %}
                     {% endfor %}
                 </ul>
