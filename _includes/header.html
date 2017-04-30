@@ -15,12 +15,11 @@
                             {% assign abbr_from_url = reversed_url_array[0] %}
                         {% endif %}
                         {% assign collection_of_dropdown = site.collections | where:"abbr",abbr_from_url %}
-                        {{ collection_of_dropdown[0].dropdown_name }}
                     {% endif %}
                     {% if page.layout == "post" %}
                         {% assign collection_of_dropdown = site.collections | where:"label",page.collection %}
-                        {{ collection_of_dropdown[0].dropdown_name }}
                     {% endif %}
+                    {{ collection_of_dropdown[0].dropdown_name }}
                     <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
