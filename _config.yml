@@ -39,9 +39,9 @@ collections:
     output: true
     dropdown_name: "English"
     abbr: en
-    permalink: /en/:title
+    permalink: /en/:title/
   chinese:
     output: true
     dropdown_name: "中文"
     abbr: cn
-    permalink: /cn/:title
+    permalink: /cn/:title/
