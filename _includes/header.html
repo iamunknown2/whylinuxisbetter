@@ -3,5 +3,28 @@
         <div class="navbar-header">
             <a class="navbar-brand" href="{{ site.baseurl }}">Why Linux is Better</a>
         </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    {% assign reversed_url_array = page.url | split:"/" | reverse %}
+                    {% if reversed_url_array[0] == "" %}
+                        {% assign abbr_from_url = reversed_url_array[1] %}
+                    {% endif %}
+                    {% if reversed_url_array[0] != "" %}
+                        {% assign abbr_from_url = reversed_url_array[0] %}
+                    {% endif %}
+                    {% assign collection_from_url_abbr = site.collections | where:"abbr",abbr_from_url %}
+                    {{ collection_from_url_abbr[0].dropdown_name }}
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    {% for collection in site.collections %}
+                    {% unless collection.label == "posts" %}{% unless collection.label == collection_from_url_abbr[0].label %}
+                    <li><a href="{{ site.baseurl }}/{{ collection.abbr }}/">{{ collection.dropdown_name }}</a></li>
+                    {% endunless %}{% endunless %}
+                    {% endfor %}
+                </ul>
+            </li>
+        </div>
     </div>
 </nav>
