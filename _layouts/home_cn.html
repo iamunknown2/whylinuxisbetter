@@ -31,7 +31,7 @@
         <div class="clearfix visible-lg-block"></div>
         {% endif %}
         {% if mod_xl == 0 %}
-        <div class="clearfix hidden-sm hidden-md hidden-lg"></div>
+        <div class="clearfix hidden-xs hidden-sm hidden-md hidden-lg"></div>
         {% endif %}
     {% endfor %}
     <div class="clearfix"></div>
@@ -55,9 +55,11 @@
     {% if mod_md == 0 %}
     <div class="clearfix visible-md-block"></div>
     {% endif %}
-    {% if mod_lg_xl == 0 %}
+    {% if mod_lg == 0 %}
     <div class="clearfix visible-lg-block"></div>
-    <div class="clearfix visible-xl-block"></div>
+    {% endif %}
+    {% if mod_xl == 0 %}
+    <div class="clearfix hidden-xs hidden-sm hidden-md hidden-lg"></div>
     {% endif %}
     {% endfor %}
     {% include footer.html %}
